@@ -1,0 +1,38 @@
+addons:
+  apt:
+    packages:
+      - expect-dev
+
+language: python
+
+python:
+  - "2.7"
+
+env:
+  global:
+    - VERSION="0.0.1"
+    - RELEASE="0.1.0"
+    - PROJECT="python-oca"
+    - ODOO="10.0"
+    - secure: "N4FxLhiQYktu5TUym48Kf5GoCeqSn/iNZT4rK9ktN18gOazkj5P9tPz33p8vde06f+yDTw6ETOZaTHUv7oGwlpc58ToMFey+XxlSyCeGoNVGi7uojs5DqF48lfKZbbTjCiiyj/6Ub7FH3IzcizbN+9WzJ6JB7v8U6eX8LwAW7YKPhdPctFM7rFZiLQp/r8lf0xN5WpMhufg3xloBJkS+iuQopULK7Il2g6Ag8Qo54IUFJzWQbZYKN8RMy0Ek41rgx88sKrTp9TDo0RBircy7f/6WH/CERTGRYtHCQDF0RToYaH9qiRiZ3w6vaxepbIicJCMCMvOQaSJ8IibIwBstwpkM0P2dHVP9WQiwxGgYMeCxS2MNkacQLAfxGXcMiRlfliq7SQpBYp7t3uEpby1l1UqDyTb+5aNUF8Y5CFx1hbbr2r++U8vLRxxvQRAzfl48Dy1jWw5N1hug/1VbGU7XuWPHiZd2WRngs2r7kUJVig9b3jQoi87kIr0V8FHjRALfsfo/swPD5mwI00qQ2eOySTKC8SSCToudByub1DYAPvuLn0JDGH1z7pDIe4rucZSSztvkiCOtlndYcm2hbyNLLVUN5Fn/GCmNZp2yer/h5Myn2kw3bMjdDLkVcgK5Ku2/eb5IMUWrjL4MbdczsUeqfNRK9oy5HEAAh+4sfre5Dw0="
+  matrix:
+    - TESTS="1"
+    - TESTS="1" ODOO="9.0"
+    - TESTS="1" ODOO="8.0"
+    - LINT_CHECK="1"
+    - DOCS="1"
+    - PYPI="1"
+
+install:
+  # Odoo not currently required.
+  # - pip install -r "https://raw.githubusercontent.com/odoo/odoo/${ODOO}/requirements.txt"
+  # - pip install "https://github.com/odoo/odoo/archive/${ODOO}.tar.gz"
+  - git clone --depth=1 https://github.com/LasLabs/python-quality-tools.git ${HOME}/python-quality-tools
+  - export PATH=${HOME}/python-quality-tools/travis:${PATH}
+  - travis_install
+
+script:
+  - travis_run
+
+after_success:
+  - travis_after_success
