@@ -8,9 +8,9 @@ from unittest import TestLoader, TextTestRunner
 
 from os import environ, path
 
-PROJECT = 'python-oca'
+PROJECT = 'oca-decorators'
 SHORT_DESC = (
-    'This is a library of helpers for Odoo developers.'
+    'This is a library of decorators for Odoo developers.'
 )
 README_FILE = 'README.rst'
 
@@ -23,6 +23,10 @@ CLASSIFIERS = [
     'Programming Language :: Python',
     'Programming Language :: Python :: 2',
     'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.4',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
     'Topic :: Software Development :: Libraries :: Python Modules',
 ]
 
@@ -34,11 +38,11 @@ if environ.get('TRAVIS_BUILD_NUMBER'):
 
 setup_vals = {
     'name': PROJECT,
-    'author': 'LasLabs Inc.',
-    'author_email': 'support@laslabs.com',
+    'author': 'Odoo Community Association (OCA)',
+    'author_email': 'tools@odoo-community.org',
     'description': SHORT_DESC,
-    'url': 'https://laslabs.github.io/%s' % PROJECT,
-    'download_url': 'https://github.com/LasLabs/%s' % PROJECT,
+    'url': 'https://oca.github.io/%s' % PROJECT,
+    'download_url': 'https://github.com/OCA/%s' % PROJECT,
     'license': 'LGPL-3',
     'classifiers': CLASSIFIERS,
     'version': version,

@@ -6,11 +6,6 @@
 from decorator import decorator
 
 
-__all__ = [
-    'foreach',
-]
-
-
 def foreach(container=None):
     """ Loop the decorated method and return the results in a new `container`.
 

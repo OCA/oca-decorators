@@ -4,21 +4,21 @@
 
 import unittest
 
-from .. import helpers
+from .. import decorators
 from .common import TestRecordset
 
 
 class ForeachRecordset(TestRecordset):
 
-    @helpers.foreach(list)
+    @decorators.foreach(list)
     def decorated_method_list(self):
         return self
 
-    @helpers.foreach()
+    @decorators.foreach()
     def decorated_method_none(self):
         return
 
-    @helpers.foreach()
+    @decorators.foreach()
     def decorated_method_none_return(self):
         return self
 

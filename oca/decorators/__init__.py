@@ -2,9 +2,9 @@
 # Copyright 2016 LasLabs Inc.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from . import decorators
+from .foreach import foreach
 
 
 __all__ = [
-    'decorators',
+    'foreach',
 ]
