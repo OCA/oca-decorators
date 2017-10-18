@@ -2,9 +2,4 @@
 # Copyright 2016 LasLabs Inc.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from . import decorators
-
-
-__all__ = [
-    'decorators',
-]
+__path__ = __import__('pkgutil').extend_path(__path__, __name__)

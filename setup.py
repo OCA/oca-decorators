@@ -18,6 +18,7 @@ README_FILE = 'README.rst'
 CLASSIFIERS = [
     'Development Status :: 4 - Beta',
     'Environment :: Console',
+    'Framework :: Odoo',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: GNU Lesser General Public License v3 or '
     'later (LGPLv3+)',
