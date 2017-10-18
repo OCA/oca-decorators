@@ -1,4 +1,4 @@
-|License MIT| | |PyPi Package| | |PyPi Versions|
+|License LGPL-3| | |PyPi Package| | |PyPi Versions|
 
 |Build Status| | |Test Coverage| | |Code Climate|
 
@@ -69,9 +69,9 @@ To contribute to this module, please visit https://odoo-community.org.
    :target: https://codecov.io/gh/OCA/oca-decorators
 .. |Code Climate| image:: https://img.shields.io/codeclimate/github/OCA/oca-decorators.svg
    :target: https://codeclimate.com/github/OCA/oca-decorators
-.. |License MIT| image:: https://img.shields.io/github/license/OCA/oca-decorators.svg
-   :target: https://opensource.org/licenses/MIT
-   :alt: License: MIT
+.. |License LGPL-3| image:: https://img.shields.io/github/license/OCA/oca-decorators.svg
+   :target: http://www.gnu.org/licenses/lgpl
+   :alt: License: LGPL-3
 .. |PyPi Package| image:: https://img.shields.io/pypi/v/oca-decorators.svg
    :target: https://pypi.python.org/pypi/oca-decorators
    :alt: PyPi Package

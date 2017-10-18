@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Copyright 2016-2017 LasLabs Inc.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
@@ -6,7 +7,7 @@ from setuptools import Command, setup
 from setuptools import find_packages
 from unittest import TestLoader, TextTestRunner
 
-from os import environ, path
+from os import path
 
 PROJECT = 'oca-decorators'
 SHORT_DESC = (
@@ -30,12 +31,6 @@ CLASSIFIERS = [
     'Topic :: Software Development :: Libraries :: Python Modules',
 ]
 
-version = environ.get('RELEASE') or environ.get('VERSION') or '0.0.1'
-
-if environ.get('TRAVIS_BUILD_NUMBER'):
-    version += 'b%s' % environ.get('TRAVIS_BUILD_NUMBER')
-
-
 setup_vals = {
     'name': PROJECT,
     'author': 'Odoo Community Association (OCA)',
@@ -45,7 +40,6 @@ setup_vals = {
     'download_url': 'https://github.com/OCA/%s' % PROJECT,
     'license': 'LGPL-3',
     'classifiers': CLASSIFIERS,
-    'version': version,
 }
 
 
@@ -88,9 +82,10 @@ class Tests(Command):
 if __name__ == "__main__":
     setup(
         packages=find_packages(exclude=('tests')),
+        use_scm_version=True,
         cmdclass={'test': Tests},
-        tests_require=[
-            'mock',
+        setup_requires=[
+            'setuptools_scm',
         ],
         install_requires=install_requires,
         **setup_vals
