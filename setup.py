@@ -61,7 +61,7 @@ class FailTestException(Exception):
 
 
 class Tests(Command):
-    """ Run test & coverage, save reports as XML """
+    """Run test & coverage, using a default TextTestRunner."""
 
     user_options = []  # < For Command API compatibility
 
