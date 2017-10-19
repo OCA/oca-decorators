@@ -1,15 +1,23 @@
-addons:
-  apt:
-    packages:
-      - expect-dev
+cache: pip
 
 language: python
 
 python:
   - "2.7"
-  - "3.4"
   - "3.5"
   - "3.6"
+
+install:
+  - pip install tox-travis
+  - pip install codecov
+  - pip install codeclimate-test-reporter
+
+script:
+  - tox
+
+after_success:
+  - codecov
+  - codeclimate-test-reporter
 
 deploy:
   provider: pypi
@@ -23,26 +31,3 @@ deploy:
     branch: master
     tags: true
 
-env:
-  global:
-    - PROJECT="oca-decorators"
-    - ODOO="10.0"
-  matrix:
-    - TESTS="1"
-    - LINT_CHECK="1"
-    - DOCS="1"
-    - PYPI="1"
-
-install:
-  # Odoo not currently required; save the install until it is.
-  # - pip install -r "https://raw.githubusercontent.com/odoo/odoo/${ODOO}/requirements.txt"
-  # - pip install "https://github.com/odoo/odoo/archive/${ODOO}.tar.gz"
-  - git clone --depth=1 https://github.com/LasLabs/python-quality-tools.git ${HOME}/python-quality-tools
-  - export PATH=${HOME}/python-quality-tools/travis:${PATH}
-  - travis_install
-
-script:
-  - travis_run
-
-after_success:
-  - travis_after_success

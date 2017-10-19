@@ -3,9 +3,8 @@
 # Copyright 2016-2017 LasLabs Inc.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from setuptools import Command, setup
+from setuptools import setup
 from setuptools import find_packages
-from unittest import TestLoader, TextTestRunner
 
 from os import path
 
@@ -26,7 +25,6 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 2',
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
     'Topic :: Software Development :: Libraries :: Python Modules',
@@ -55,36 +53,10 @@ if path.exists('requirements.txt'):
         install_requires = fh.read().splitlines()
 
 
-class FailTestException(Exception):
-    """ It provides a failing build """
-    pass
-
-
-class Tests(Command):
-    """Run test & coverage, using a default TextTestRunner."""
-
-    user_options = []  # < For Command API compatibility
-
-    def initialize_options(self, ):
-        pass
-
-    def finalize_options(self, ):
-        pass
-
-    def run(self, ):
-        loader = TestLoader()
-        tests = loader.discover('.', 'test_*.py')
-        t = TextTestRunner(verbosity=1)
-        res = t.run(tests)
-        if not res.wasSuccessful():
-            raise FailTestException()
-
-
 if __name__ == "__main__":
     setup(
         packages=find_packages(exclude=('tests')),
         use_scm_version=True,
-        cmdclass={'test': Tests},
         setup_requires=[
             'setuptools_scm',
         ],
