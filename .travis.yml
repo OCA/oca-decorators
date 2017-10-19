@@ -1,0 +1,33 @@
+cache: pip
+
+language: python
+
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+
+install:
+  - pip install tox-travis
+  - pip install codecov
+  - pip install codeclimate-test-reporter
+
+script:
+  - tox
+
+after_success:
+  - codecov
+  - codeclimate-test-reporter
+
+deploy:
+  provider: pypi
+  user: laslabs
+  password:
+    secure: "UOFAfNJj1NNP3qI73IzrTncleyxSHwnYVpRe5vgAzlg0ojZWFTPRzac9JxKOvZPViuPnS+v8/UOequEz7sEOwLnYQIZcW1k4TAYWSNeAhjn7MpcboaSsujgGE1eMYWor3pgnU6f0EvBp0bhgfxciwHhjfU6PSr2CAfmJDjT02G1lsk8N94gTSYNwy+FV3QRPWlsB+ZyGGoUwf+Ap0gh7U3EaFSeVZ8P+y8oP99A1Zyz4dd0GjW2/5zj4eXm6boDUGt8sPAATf0Lni3xMfE/T+43MfMYRj1Yw6Ho7+mgYLL+RpgrY7pHA3pfOTomoz11yHnNYZq3sCKjDclspq64XSryICGOYC9hDT5vz+GbFzbpcnimbitdhO8STLPK9O0AMbrbanPaHVtNpC7dA+ZKpXtkD2UYN/GUVcc//nDCkGs6T1bFHFV9NUKfEqLr6LpS6Yb9MLc0g+x3b1+632FfoZ5+8uxM+NKHgh6uos9DPiLx8ZOCfgqVUqXexJq21bFuELqMkHZEu01Pe2MIB5K5ol3KDETYTYJJq4XF6+kF4Ge64LV+iRCP9WVxnX8OtovYxE5/56lB9S7Qc57Y1PpVupUGCo67wVE0UP7LHcs7qfEKmS/ulr2ARYNBVO0vfWrWm+9EnP/HNwqok4cna2/voVgoXNFeAj4u8+v2TfvKfIGg="
+  distributions: "sdist bdist_wheel"
+  skip_upload_docs: true
+  on:
+    repo: oca/oca-decorators
+    branch: master
+    tags: true
+
