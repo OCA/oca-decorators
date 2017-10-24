@@ -47,12 +47,6 @@ if path.exists(README_FILE):
         setup_vals['long_description'] = fh.read()
 
 
-install_requires = []
-if path.exists('requirements.txt'):
-    with open('requirements.txt') as fh:
-        install_requires = fh.read().splitlines()
-
-
 if __name__ == "__main__":
     setup(
         packages=find_packages(exclude=('tests')),
@@ -60,6 +54,8 @@ if __name__ == "__main__":
         setup_requires=[
             'setuptools_scm',
         ],
-        install_requires=install_requires,
+        install_requires=[
+            'decorator',
+        ],
         **setup_vals
     )
