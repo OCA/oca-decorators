@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>oca.tests.test_helpers_foreach &#8212; OCA Decorators 0.0.0b28 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.0.0b28',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for oca.tests.test_helpers_foreach</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># Copyright 2016-2017 LasLabs Inc.</span>
+<span class="c1"># License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).</span>
+
+<span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">decorators</span>
+<span class="kn">from</span> <span class="nn">.common</span> <span class="k">import</span> <span class="n">TestRecordset</span>
+
+
+<div class="viewcode-block" id="ForeachRecordset"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.ForeachRecordset">[docs]</a><span class="k">class</span> <span class="nc">ForeachRecordset</span><span class="p">(</span><span class="n">TestRecordset</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ForeachRecordset.decorated_method_list"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_list">[docs]</a>    <span class="nd">@decorators</span><span class="o">.</span><span class="n">foreach</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">decorated_method_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="ForeachRecordset.decorated_method_none"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_none">[docs]</a>    <span class="nd">@decorators</span><span class="o">.</span><span class="n">foreach</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">decorated_method_none</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span></div>
+
+<div class="viewcode-block" id="ForeachRecordset.decorated_method_none_return"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_none_return">[docs]</a>    <span class="nd">@decorators</span><span class="o">.</span><span class="n">foreach</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">decorated_method_none_return</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span></div></div>
+
+
+<div class="viewcode-block" id="TestHelpersForeach"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.TestHelpersForeach">[docs]</a><span class="k">class</span> <span class="nc">TestHelpersForeach</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestHelpersForeach.setUp"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.TestHelpersForeach.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="n">ForeachRecordset</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TestHelpersForeach</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="TestHelpersForeach.test_foreach_list"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_list">[docs]</a>    <span class="k">def</span> <span class="nf">test_foreach_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; It should iterate and return list of method results. &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">decorated_method_list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span>
+            <span class="n">res</span><span class="p">,</span> <span class="n">ForeachRecordset</span><span class="o">.</span><span class="n">records</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestHelpersForeach.test_foreach_none"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_none">[docs]</a>    <span class="k">def</span> <span class="nf">test_foreach_none</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; It should call the method but return nothing. &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">decorated_method_none</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIs</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestHelpersForeach.test_foreach_none_return"><a class="viewcode-back" href="../../../oca.tests.html#oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_none_return">[docs]</a>    <span class="k">def</span> <span class="nf">test_foreach_none_return</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; It should raise a ValueError if the method returns data. &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">AssertionError</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">decorated_method_none_return</span><span class="p">()</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">OCA Decorators</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=OCA&repo=oca-decorators&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+    
+
+<p>
+<a href="https://travis-ci.org/OCA/oca-decorators">
+    <img
+        alt="https://secure.travis-ci.org/OCA/oca-decorators.svg?branch=master"
+        src="https://secure.travis-ci.org/OCA/oca-decorators.svg?branch=master"
+    />
+</a>
+</p>
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../oca.html">oca package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../setup.html">setup module</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017 LasLabs Inc..
+      
+    </div>
+
+    
+    <a href="https://github.com/OCA/oca-decorators" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

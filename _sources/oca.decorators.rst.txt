@@ -1,0 +1,22 @@
+oca\.decorators package
+=======================
+
+Submodules
+----------
+
+oca\.decorators\.foreach module
+-------------------------------
+
+.. automodule:: oca.decorators.foreach
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: oca.decorators
+    :members:
+    :undoc-members:
+    :show-inheritance:

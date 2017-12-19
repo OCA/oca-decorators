@@ -1,0 +1,30 @@
+oca\.tests package
+==================
+
+Submodules
+----------
+
+oca\.tests\.common module
+-------------------------
+
+.. automodule:: oca.tests.common
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+oca\.tests\.test\_helpers\_foreach module
+-----------------------------------------
+
+.. automodule:: oca.tests.test_helpers_foreach
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: oca.tests
+    :members:
+    :undoc-members:
+    :show-inheritance:

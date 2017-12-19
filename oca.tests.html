@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>oca.tests package &#8212; OCA Decorators 0.0.0b28 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.0b28',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="setup module" href="setup.html" />
+    <link rel="prev" title="oca.decorators package" href="oca.decorators.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="oca-tests-package">
+<h1>oca.tests package<a class="headerlink" href="#oca-tests-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-oca.tests.common">
+<span id="oca-tests-common-module"></span><h2>oca.tests.common module<a class="headerlink" href="#module-oca.tests.common" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="oca.tests.common.TestRecordset">
+<em class="property">class </em><code class="descclassname">oca.tests.common.</code><code class="descname">TestRecordset</code><a class="reference internal" href="_modules/oca/tests/common.html#TestRecordset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.common.TestRecordset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/2/library/functions.html#object" title="(in Python v2.7)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
+<p>It provides a mock RecordSet for testing</p>
+<dl class="attribute">
+<dt id="oca.tests.common.TestRecordset.iter_count">
+<code class="descname">iter_count</code><em class="property"> = 0</em><a class="headerlink" href="#oca.tests.common.TestRecordset.iter_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="oca.tests.common.TestRecordset.records">
+<code class="descname">records</code><em class="property"> = ['test1', 'test2']</em><a class="headerlink" href="#oca.tests.common.TestRecordset.records" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-oca.tests.test_helpers_foreach">
+<span id="oca-tests-test-helpers-foreach-module"></span><h2>oca.tests.test_helpers_foreach module<a class="headerlink" href="#module-oca.tests.test_helpers_foreach" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="oca.tests.test_helpers_foreach.ForeachRecordset">
+<em class="property">class </em><code class="descclassname">oca.tests.test_helpers_foreach.</code><code class="descname">ForeachRecordset</code><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#ForeachRecordset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.ForeachRecordset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#oca.tests.common.TestRecordset" title="oca.tests.common.TestRecordset"><code class="xref py py-class docutils literal"><span class="pre">oca.tests.common.TestRecordset</span></code></a></p>
+<dl class="method">
+<dt id="oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_list">
+<code class="descname">decorated_method_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#ForeachRecordset.decorated_method_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_none">
+<code class="descname">decorated_method_none</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#ForeachRecordset.decorated_method_none"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_none" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_none_return">
+<code class="descname">decorated_method_none_return</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#ForeachRecordset.decorated_method_none_return"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.ForeachRecordset.decorated_method_none_return" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="oca.tests.test_helpers_foreach.TestHelpersForeach">
+<em class="property">class </em><code class="descclassname">oca.tests.test_helpers_foreach.</code><code class="descname">TestHelpersForeach</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#TestHelpersForeach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.TestHelpersForeach" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="oca.tests.test_helpers_foreach.TestHelpersForeach.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#TestHelpersForeach.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.TestHelpersForeach.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_list">
+<code class="descname">test_foreach_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#TestHelpersForeach.test_foreach_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>It should iterate and return list of method results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_none">
+<code class="descname">test_foreach_none</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#TestHelpersForeach.test_foreach_none"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_none" title="Permalink to this definition">¶</a></dt>
+<dd><p>It should call the method but return nothing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_none_return">
+<code class="descname">test_foreach_none_return</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/oca/tests/test_helpers_foreach.html#TestHelpersForeach.test_foreach_none_return"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#oca.tests.test_helpers_foreach.TestHelpersForeach.test_foreach_none_return" title="Permalink to this definition">¶</a></dt>
+<dd><p>It should raise a ValueError if the method returns data.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-oca.tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-oca.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">OCA Decorators</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=OCA&repo=oca-decorators&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+    
+
+<p>
+<a href="https://travis-ci.org/OCA/oca-decorators">
+    <img
+        alt="https://secure.travis-ci.org/OCA/oca-decorators.svg?branch=master"
+        src="https://secure.travis-ci.org/OCA/oca-decorators.svg?branch=master"
+    />
+</a>
+</p>
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="oca.html">oca package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="oca.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="oca.decorators.html">oca.decorators package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">oca.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-oca.tests.common">oca.tests.common module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-oca.tests.test_helpers_foreach">oca.tests.test_helpers_foreach module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-oca.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="oca.html#module-oca">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup module</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017 LasLabs Inc..
+      
+      |
+      <a href="_sources/oca.tests.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/OCA/oca-decorators" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
