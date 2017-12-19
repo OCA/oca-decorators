@@ -7,17 +7,24 @@ python:
   - "3.5"
   - "3.6"
 
+env:
+  global:
+  - PROJECT="OCA Decorators"
+  - GH_NAME="OCA Git Bot"
+  - GH_EMAIL="oca-git-bot@odoo-community.org"
+  matrix:
+  - TESTS="1"
+  - LINT="1"
+  - DOCS="1"
+
 install:
-  - pip install tox-travis
-  - pip install codecov
-  - pip install codeclimate-test-reporter
-
+  - git clone --depth=1 https://github.com/LasLabs/python-quality-tools.git ${HOME}/python-quality-tools
+  - export PATH=${HOME}/python-quality-tools/travis:${PATH}
+  - travis_install
 script:
-  - tox
-
+  - travis_run
 after_success:
-  - codecov
-  - codeclimate-test-reporter
+  - travis_after_success
 
 deploy:
   provider: pypi
@@ -30,4 +37,3 @@ deploy:
     repo: OCA/oca-decorators
     branch: master
     tags: true
-
